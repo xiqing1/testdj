@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+	<form action="/calc" method="post">
+      {% csrf_token %}
+      {% load static %}
+			<script>
+			function myFunction_old(val)
+			{
+			    <!-- alert(val); !>
+			    
+			    sel_main = document.getElementById("input_5_0_1");
+			    sel_sec = document.getElementById("input_5_0_2");
+			    sel_third = document.getElementById("input_5_0_3");
+			    
+			    lab_main = document.getElementById("label_5_col_1");
+			    lab_sec = document.getElementById("label_5_col_2");
+			    lab_third = document.getElementById("label_5_col_3");
+			    
+			    sel_main.options.length = 0;
+			    sel_sec.options.length = 0;
+			    sel_third.options.length = 0;
+			    
+			    switch(val)
+			    {
+			    	case "C_Villa":			    	  
+			    	  lab_main.innerHTML = "别墅分类";
+			    	  sel_main.add(new Option("独栋","s_1_house")) ;
+			    	  sel_main.add(new Option("双拼","s_1_duplex",));
+              sel_main.add(new Option("联排","s_1_townhouse"));
+              sel_main.add(new Option("叠墅","s_1_villa"));
+              
+              lab_sec.innerHTML = "";
+              lab_sec.disabled=true;
+              sel_sec.disabled=true;
+              
+              lab_third.innerHTML = "面积和户数";
+              sel_third.add(new Option("140 / 2","s_3_1"));
+              sel_third.add(new Option("180 / 2","s_3_2"));
+			        break;
+			      case "C_Multi":
+			        lab_main.innerHTML = "多层数";
+			        sel_main.add(new Option("四层","s_1_4f")) ;
+							sel_main.add(new Option("五层","s_1_5f")) ;
+							sel_main.add(new Option("六层","s_1_6f")) ;
+							sel_main.add(new Option("七层","s_1_7f")) ;
+							sel_main.add(new Option("四连叠","s_1_4double")) ;
+							sel_main.add(new Option("六连叠","s_1_6double")) ;
+
+							lab_sec.disabled=false;
+              sel_sec.disabled=false;
+              
+			    	  lab_sec.innerHTML = "单层户数";
+			   			sel_sec.add(new Option("单层一户","s_2_1"));
+              sel_sec.add(new Option("单层二户","s_2_2"));
+              sel_sec.add(new Option("单层三户","s_2_3"));
+              sel_sec.add(new Option("单层四户","s_2_4"));
+              sel_sec.add(new Option("单层五户","s_2_5"));
+              sel_sec.add(new Option("单层六户","s_2_6"));
+              
+              lab_third.innerHTML = "面积和户数";
+              sel_third.add(new Option("90 / 1","s_3_1"));
+              sel_third.add(new Option("150 / 2","s_3_2"));
+              sel_third.add(new Option("230 / 1","s_3_3"));
+			        break;
+			      case "C_High":
+			    	  lab_main.innerHTML = "高层数";
+			        lab_sec.innerHTML = "单层户数";
+			        
+			        lab_sec.disabled=false;
+              sel_sec.disabled=false;
+			        break;
+			    }
+			    
+			}
+			</script>
+			<script src="{% static "testdj/real.js" %}">				
+			</script>
+			<li class="form-line" data-type="control_matrix" id="id_1">
+			  <label  id="label_5" for="input_5"> Type a question </label>
+        <div id="cid_5" >
+          <table summary="" role="presentation" cellPadding="4" cellSpacing="0" class="form-matrix-table" data-component="matrix">
+            <tbody>
+              <tr>
+                <th style="border:none">
+                   
+                </th>
+                <th scope="col" >
+                  <label id="label_5_col_0"> 类别 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_1">
+                  <label id="label_5_col_1">  </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_2">
+                  <label id="label_5_col_2">  </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_3">
+                  <label id="label_5_col_3">  </label>
+                </th>
+              </tr>
+              <tr role="group" aria-labelledby="label_5 label_5_row_0">
+                <th scope="row" style="text-align:left" class="form-matrix-row-headers">
+                  <label id="label_5_row_0">  </label>
+                </th>
+                <td style="text-align:center" class="form-matrix-values">
+                  <select id="input_5_0_0" name="q5_typeA[0][]" style="width:100%;box-sizing:border-box" aria-labelledby="label_5_col_0" onchange="myFunction(this.value)">
+                    <option>  </option>
+                    <option value="C_Villa"> 别墅 </option>
+                    <option value="C_Multi"> 多层 </option>
+                    <option value="C_High"> 高层 </option>                    
+                  </select>
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <select id="input_5_0_1" name="q5_typeA[0][]" style="width:100%;box-sizing:border-box" aria-labelledby="label_5_col_1">
+                  </select>
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <select id="input_5_0_2" class="form-dropdown" name="q5_typeA[0][]" style="width:100%;box-sizing:border-box" aria-labelledby="label_5_col_2">
+                    
+                  </select>
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <select id="input_5_0_3" class="form-dropdown" name="q5_typeA[0][]" style="width:100%;box-sizing:border-box" aria-labelledby="label_5_col_3">
+                    
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      
+      <li class="form-line" data-type="control_matrix" id="id_2">
+        <div id="cid_3" class="form-input-wide">
+          <table summary="" role="presentation" cellPadding="4" cellSpacing="0" class="form-matrix-table" data-component="matrix">
+            <tbody>
+              <tr>                
+                <th scope="row" style="border:none" class="form-matrix-row-headers">
+                  <label id="label_3_row_0"> 产品类别 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_0">
+                  <label id="label_3_col_0"> 单套面积 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_1">
+                  <label id="label_3_col_1"> 首层占地 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_2">
+                  <label id="label_3_col_2"> 层数 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_3">
+                  <label id="label_3_col_3"> 单栋户数 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_4">
+                  <label id="label_3_col_4"> 单幢栋数 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_5">
+                  <label id="label_3_col_5">
+                    <span style="display: inline !important;">
+                      单幢户数
+                    </span>
+                  </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_6">
+                  <label id="label_3_col_6">
+                    <span style="display: inline !important;">
+                      单幢占地
+                    </span>
+                  </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_7">
+                  <label id="label_3_col_7">
+                    <span style="display: inline !important;">
+                      单幢建面
+                    </span>
+                  </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_8">
+                  <label id="label_3_col_8"> 幢数 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_9">
+                  <label id="label_3_col_9"> 总占地 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_10">
+                  <label id="label_3_col_10"> 总建面 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_11">
+                  <label id="label_3_col_11"> 单价 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_12">
+                  <label id="label_3_col_12"> 总价 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_13">
+                  <label id="label_3_col_13"> 单位利润 </label>
+                </th>
+                <th scope="col" class="form-matrix-column-headers form-matrix-column_14">
+                  <label id="label_3_col_14"> 总利润 </label>
+                </th>
+              </tr>
+              <tr role="group" aria-labelledby="label_3 label_3_row_0">
+                <th scope="row" style="text-align:left" class="form-matrix-row-headers">
+                  <label id="label_3_row_0"> 别墅 </label>
+                </th>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_0" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_0" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_1" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_1" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_2" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_2" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_3" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_3" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_4" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_4" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_5" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_5" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_6" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_6" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_7" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_7" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_8" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_8" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_9" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_9" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_10" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_10" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_11" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_11" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_12" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_12" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_13" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_13" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_0_14" class="form-textbox" size="5" name="q3_input3[0][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_14" />
+                </td>
+              </tr>
+              <tr role="group" aria-labelledby="label_3 label_3_row_1">
+                <th scope="row" style="text-align:left" class="form-matrix-row-headers">
+                  <label id="label_3_row_1"> 多层 </label>
+                </th>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_0" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_0" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_1" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_1" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_2" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_2" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_3" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_3" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_4" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_4" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_5" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_5" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_6" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_6" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_7" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_7" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_8" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_8" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_9" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_9" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_10" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_10" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_11" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_11" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_12" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_12" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_13" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_13" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_1_14" class="form-textbox" size="5" name="q3_input3[1][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_14" />
+                </td>
+              </tr>
+              <tr role="group" aria-labelledby="label_3 label_3_row_2">
+                <th scope="row" style="text-align:left" class="form-matrix-row-headers">
+                  <label id="label_3_row_2"> 高层 </label>
+                </th>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_0" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_0" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_1" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_1" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_2" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_2" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_3" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_3" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_4" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_4" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_5" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_5" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_6" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_6" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_7" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_7" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_8" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_8" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_9" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_9" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_10" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_10" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_11" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_11" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_12" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_12" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_13" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_13" />
+                </td>
+                <td style="text-align:center" class="form-matrix-values">
+                  <input type="text" id="input_3_2_14" class="form-textbox" size="5" name="q3_input3[2][]" style="width:100%;box-sizing:border-box" value="" aria-labelledby="label_3_col_14" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      
+      <li class="form-line" data-type="control_button" id="id_3">
+        <div id="cid_2" class="form-input-wide">
+          <div style="margin-left:156px" data-align="auto" class="form-buttons-wrapper  ">
+            <button id="input_2" type="submit" class="form-submit-button" data-component="button" data-content="">
+              提交
+            </button>
+          </div>
+        </div>
+      </li>
+  </form>
+ 
+  <p>{{ rlt }}</p>
+  <p>{{ rlt1 }}</p>
+  <p>{{ rlt2 }}</p>
+</body>
+</html>
